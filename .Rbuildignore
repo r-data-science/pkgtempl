@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^_dev$
+^codecov\.yml$
+.github
+^\.github$
+^\.lintr$
