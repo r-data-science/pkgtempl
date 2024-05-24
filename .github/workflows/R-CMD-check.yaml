@@ -1,8 +1,8 @@
 on:
   push:
-    branches: [master, develop]
+    branches: [main]
   pull_request:
-    branches: [master, develop]
+    branches: [main]
 
 name: R-CMD-check
 
@@ -57,9 +57,9 @@ jobs:
           do
             eval sudo $cmd
           done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
-      - name: Install needed HCA dependencies
+      - name: Install needed GH dependencies
         run: |
-          # remotes::install_github("happycabbage/DEP_PKG_1")
+          # remotes::install_github("r-data-science/DEP_PKG_1")
         shell: Rscript {0}
 
       - name: Install dependencies

@@ -2,9 +2,9 @@
 # Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
 on:
   push:
-    branches: [master, develop]
+    branches: [main]
   pull_request:
-    branches: [master, develop]
+    branches: [main]
 
 name: lint
 
@@ -35,9 +35,9 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
-      - name: Install needed HCA dependencies
+      - name: Install needed dependencies
         run: |
-          # remotes::install_github("happycabbage/DEP_PKG_1")
+          # remotes::install_github("r-data-science/DEP_PKG_1")
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("lintr")
         shell: Rscript {0}
